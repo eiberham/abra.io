@@ -1,0 +1,16 @@
+.container {
+    background: #fefefe;
+    width: 100%;
+    max-width: 650px;
+    padding: 10px 8px;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 30vh 30vh 30vh;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    grid-template-areas: "head head head"
+                        "main main main"
+                        "foot foot foot";
+    font-size: 1.2rem;
+    color: #555;
+}

@@ -1,0 +1,19 @@
+.footer {
+    background: white;
+    align-self: flex-end;
+    display: flex;
+    grid-area: foot;
+    grid-column: 1 / -1;
+    min-height: 15vh;
+    &__follow {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.8rem;
+        a {
+            color: #555;
+        }
+    }
+}
