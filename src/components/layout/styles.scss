@@ -5,12 +5,14 @@
     padding: 10px 8px;
     margin: auto;
     display: grid;
-    grid-template-rows: 30vh 30vh 30vh;
+    grid-template-rows: 25vh min-content 20vh;
     grid-template-columns: 1fr;
     grid-gap: 10px;
     grid-template-areas: "head head head"
                         "main main main"
                         "foot foot foot";
+    grid-auto-rows: max-content;
     font-size: 1.2rem;
     color: #555;
+    height: max-content;
 }
