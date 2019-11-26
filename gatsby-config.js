@@ -8,6 +8,13 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en'
+      }
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

@@ -12,6 +12,8 @@ const Layout = ({children}) => {
                 <title>Abraham</title>
                 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet"></link>
+                <meta name="description" content="Abraham's Portfolio"></meta>
+                <meta name="keywords" content="Software, Developer, Frontend, Portfolio"></meta>
             </Helmet>
             <Global
                 styles={css`
