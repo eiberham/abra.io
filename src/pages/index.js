@@ -12,12 +12,15 @@ export default () => (
             </p>
             <br />
             <p>
-                High understanding of software architecture design and awareness of how to create 
-                software which is scalable, easily maintainable, extensible and easy to test.
+                Critical thinking, high understanding of software architecture design and awareness 
+                of how to create software which is scalable, easily maintainable, extensible and easy 
+                to test.
             </p>
             <br />
             <p>
-                Check out some of my side projects and overall resume in the links below.
+                The technologies i enjoy the most working with right now are React.js, Node.js and 
+                Typescript. Check out some of my side projects / open source contributions and 
+                overall resume in the links below ↓.
             </p>
         </article>
     </Layout>
