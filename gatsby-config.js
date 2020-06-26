@@ -20,6 +20,31 @@ module.exports = {
       options: {
         trackingId: "UA-153405661-1",
       },
+    },{
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Abra`,
+        short_name: `Abra`,
+        description: `Hi i'm abraham i'm a software engineer who loves building stuff`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `static/favicon.ico`,
+        lang: `en`,
+        legacy: false,
+        include_favicon: false,
+        cache_busting_mode: `none`,
+      }
     },
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+         workboxConfig: {
+            globPatterns: ['**/*']
+         },
+         precachePages: [`/`]
+      }
+    }
   ],
 }
