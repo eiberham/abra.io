@@ -6,9 +6,9 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer__follow">
-                <a href="https://github.com/wwleak"><FaGithubSquare /></a>
-                <a href="https://www.linkedin.com/in/abraham-cedeño-135809107/"><FaLinkedin /></a>
-                <a href="https://codepen.io/wwleak"><FaCodepen /></a>
+                <a name="github" href="https://github.com/wwleak"><FaGithubSquare /></a>
+                <a name="linkedin" href="https://www.linkedin.com/in/abraham-cedeño-135809107/"><FaLinkedin /></a>
+                <a name="codepen" href="https://codepen.io/wwleak"><FaCodepen /></a>
             </div>
         </footer>
     )

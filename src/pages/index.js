@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 export default () => (
     <Layout>
         <article>
-            <h3>Software Developer.</h3>
+            <h2>Software Developer.</h2>
             <p>
                 I'm a passionate frontend developer who loves building software and contributing 
                 to open source projects, tries to keep up to date with new trends and is eager to 
