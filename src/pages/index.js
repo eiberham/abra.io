@@ -1,5 +1,5 @@
-import React from "react"
-import Layout from "../components/layout";
+import React, { lazy } from "react"
+const Layout = lazy(() => import("../components/layout"));
 
 export default () => (
     <Layout>

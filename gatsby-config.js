@@ -23,8 +23,8 @@ module.exports = {
     },{
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Abra`,
-        short_name: `Abra`,
+        name: `Abraham`,
+        short_name: `Abraham`,
         description: `Hi i'm abraham i'm a software engineer who loves building stuff`,
         start_url: `/`,
         background_color: `#f7f0eb`,
