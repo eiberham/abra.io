@@ -1,5 +1,5 @@
 .container {
-    background: #fefefe;
+    background: inherit;
     width: 100%;
     max-width: 650px;
     padding: 10px 8px;
@@ -13,6 +13,6 @@
                         "foot foot foot";
     grid-auto-rows: max-content;
     font-size: 1.2rem;
-    color: #555;
+    color: inherit;
     height: max-content;
 }
