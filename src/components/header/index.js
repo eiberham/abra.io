@@ -7,7 +7,7 @@ const Header = () => {
             <div>
                 <h1>{'<Hi />'}, I'm Abraham.</h1>
                 <span className="mail">
-                    <a href="mailto:cedenoabraham@gmail.com">cedenoabraham(at)gmail.com</a>
+                    <a arial-label="email" href="mailto:cedenoabraham@gmail.com">cedenoabraham(at)gmail.com</a>
                 </span>
             </div>
         </header>
