@@ -25,6 +25,12 @@ const Layout = ({children}) => {
                     align-items: center;
                     min-height: 100vh;
                     font-family: 'Roboto', sans-serif;
+                    color: #555;
+                }
+                body.dark {
+                    -webkit-font-smoothing: antialiased;
+                    background: #282c35 !important;
+                    color: #e4d0a0 !important;
                 }
                 * {
                     box-sizing: border-box;

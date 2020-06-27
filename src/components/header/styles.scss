@@ -1,6 +1,20 @@
 .header {
     grid-area: head;
     grid-column: 1 / -1;
+    
+    .react-toggle-track-check { 
+        top: -10px; 
+        left: 5px;
+    }
+    .react-toggle-track-x {
+        top: -10px;
+        right: 15px;
+    }
+    .dark-mode.react-toggle--checked .react-toggle-track,
+    .dark-mode.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track,
+    .dark-mode.react-toggle--checked .react-toggle-track:hover {
+        background-color: black
+    }
     .mail {
         display: flex;
         justify-content: flex-end;

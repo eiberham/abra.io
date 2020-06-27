@@ -4,24 +4,24 @@ import Layout from "../components/layout";
 export default () => (
     <Layout>
         <article>
-            <h2>Software Developer.</h2>
+            <h2>Software Engineer.</h2>
             <p>
-                I'm a passionate frontend developer who loves building software and contributing 
-                to open source projects, tries to keep up to date with new trends and is eager to 
-                level up coding skills.
+                I’m a software engineer, i’ve been in the tech industry for around 8 years. During all 
+                those years i’ve built things mostly with html, css, javascript, php and golang in 
+                fullstack and frontend positions.
+            </p>
+            <br/>
+            <p>
+                Lately i’ve been more focused in the frontend side working with react, using functional
+                programming techniques, writing unit tests and sometimes automating tasks with golang.
             </p>
             <br />
             <p>
-                Critical thinking, high understanding of software architecture design and awareness 
-                of how to create software which is scalable, easily maintainable, extensible and easy 
-                to test.
+                You’ll find more detailed information about my experience in my resume, also if you want 
+                to get a sense of how i code there’s a github repository where you can see all the side 
+                projects i’ve built, and the technologies i’ve worked with.
             </p>
             <br />
-            <p>
-                The technologies i enjoy the most working with right now are React.js, Node.js and 
-                Typescript. Check out some of my side projects / open source contributions and 
-                overall resume in the links below ↓.
-            </p>
         </article>
     </Layout>
 );
