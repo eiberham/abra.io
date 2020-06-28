@@ -1,20 +1,10 @@
 import React from 'react';
 import './styles.scss';
-import { Helmet } from "react-helmet"
 import { css, Global } from "@emotion/core"
-import Header from '../header';
-import Footer from '../footer';
 
 const Layout = ({children}) => {
     return (
         <React.Fragment>
-            <Helmet>
-                <title>Abraham</title>
-                <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-                <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet"></link>
-                <meta name="description" content="Abraham's Portfolio"></meta>
-                <meta name="keywords" content="Software, Developer, Frontend, Portfolio"></meta>
-            </Helmet>
             <Global
                 styles={css`
                 body {
@@ -46,9 +36,7 @@ const Layout = ({children}) => {
             `} 
             />
             <main className="container">
-                <Header />
-                    {children}
-                <Footer />
+                {children}
             </main>
         </React.Fragment>
     )

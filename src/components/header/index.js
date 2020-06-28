@@ -10,10 +10,6 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import 'react-toggle/style.css';
 
 const Header = () => {
-    /* const [dark, setDark] = useState(false);
-    const onToggleChange = useCallback(()=> {
-        toggleTheme(dark ? 'dark' : 'light')
-    }, [dark]) */
     return (
         <header className="header">
             <div>
@@ -32,6 +28,12 @@ const Header = () => {
                     )}
                 </ThemeToggler>
                 <span className="mail">
+                    <a 
+                        aria-label="resume" 
+                        href="https://drive.google.com/file/d/1b45d3rNyMs9dQq9LraDfyfPic1Z1nU69/view?usp=sharing" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >resume</a>
                     <a arial-label="email" href="mailto:cedenoabraham@gmail.com">cedenoabraham(at)gmail.com</a>
                 </span>
             </div>
