@@ -1,8 +1,20 @@
 import React from "react"
+import { Helmet } from "react-helmet";
+
+import Header from '../components/header';
+import Footer from '../components/footer';
 import Layout from "../components/layout";
 
 export default () => (
     <Layout>
+        <Header />
+        <Helmet>
+            <title>Abraham</title>
+            <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet"></link>
+            <meta name="description" content="Abraham's Portfolio"></meta>
+            <meta name="keywords" content="Software, Developeblogr, Frontend, Portfolio"></meta>
+        </Helmet>
         <article>
             <h2>Software Engineer.</h2>
             <p>
@@ -19,9 +31,10 @@ export default () => (
             <p>
                 You’ll find more detailed information about my experience in my resume, also if you want 
                 to get a sense of how i code there’s a github repository where you can see all the side 
-                projects i’ve built, and the technologies i’ve worked with.
+                projects i have built and their underlying technologies.
             </p>
             <br />
         </article>
+        <Footer />
     </Layout>
 );
