@@ -18,6 +18,10 @@ export default () => {
                     Welcome to the blog, here you'll know about things i do and learn in my journey
                     as a developer.
                 </h2>
+                <p>
+                    Sorry the blog is currently in development, it will be ready soon, please 
+                    come back later !
+                </p>
             </section>
         </Layout>
     )
