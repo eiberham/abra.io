@@ -1,16 +1,16 @@
 .container {
     background: inherit;
     width: 100%;
-    max-width: 650px;
+    max-width: 750px;
     padding: 10px 8px;
     margin: auto;
     display: grid;
     grid-template-rows: 25vh min-content 20vh;
-    grid-template-columns: 1fr;
+    grid-template-columns: 6fr 3fr;
     grid-gap: 10px;
-    grid-template-areas: "head head head"
-                        "main main main"
-                        "foot foot foot";
+    grid-template-areas: "head head"
+                        "main main"
+                        "foot foot";
     grid-auto-rows: max-content;
     font-size: 1.2rem;
     color: inherit;

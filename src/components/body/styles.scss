@@ -1,0 +1,16 @@
+.paragraph {
+    grid-area: main;
+    grid-column: 1 / -1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1, h2, h3 {
+        align-self: start;
+    }
+
+    p {
+        margin: 1rem 0;
+    }
+} 

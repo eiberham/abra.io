@@ -2,6 +2,8 @@ import React from "react"
 import { Helmet } from "react-helmet";
 import Layout from "../components/layout";
 
+import { FaGhost } from "react-icons/fa";
+
 export default () => {
     return (
         <Layout>
@@ -12,16 +14,9 @@ export default () => {
                 <meta name="description" content="Blog"></meta>
                 <meta name="keywords" content="Software, Development"></meta>
             </Helmet>
-            <section>
-                <h1>Blog</h1>
-                <h2>
-                    Welcome to the blog, here you'll know about things i do and learn in my journey
-                    as a developer.
-                </h2>
-                <p>
-                    Sorry the blog is currently in development, it will be ready soon, please 
-                    come back later !
-                </p>
+            <section className="paragraph">
+                <h1>Articles, tutorials, findings, scripts and whatnot.</h1>
+                <FaGhost size={120} color="lightblue" />
             </section>
         </Layout>
     )

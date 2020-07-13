@@ -1,6 +1,10 @@
 .header {
     grid-area: head;
     grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     
     .react-toggle-track-check { 
         top: -10px; 
@@ -15,7 +19,8 @@
     .dark-mode.react-toggle--checked .react-toggle-track:hover {
         background-color: black
     }
-    .mail {
+    
+    .right {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
