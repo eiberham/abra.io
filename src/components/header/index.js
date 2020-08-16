@@ -38,7 +38,7 @@ const Header = () => {
                     >blog</a>
                     <a 
                         aria-label="resume" 
-                        href="https://drive.google.com/file/d/1b45d3rNyMs9dQq9LraDfyfPic1Z1nU69/view?usp=sharing" 
+                        href="https://drive.google.com/file/d/113nL7esEVU3lGh8TtR8gvVIRq1X4wawk/view?usp=sharing" 
                         target="_blank" 
                         rel="noopener noreferrer"
                     >resume</a>

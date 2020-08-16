@@ -8,7 +8,7 @@ const Body = ({children}) => {
             {/* <article> */}
                 <h2>Software Engineer.</h2>
                 <p>
-                    I’m a software engineer, i’ve been in the tech industry for around 8 years. During all 
+                    I’ve been in the tech industry for around 8 years. During all 
                     those years i’ve built things mostly with html, css, javascript, php and golang in 
                     fullstack and frontend positions.
                 </p>
