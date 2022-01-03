@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     title: `Abraham - Blog`,
     author: `Abraham`,
-    
+    description: 'Part of my journey as a developer captured in words'
   },
   plugins: [
     `gatsby-plugin-sass`,
