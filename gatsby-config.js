@@ -14,7 +14,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-dark-mode`,
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
@@ -59,7 +58,15 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [],
+        plugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: "carbon",
+              theme: "dracula",
+            },
+          },
+        ],
       },
     },
   ],

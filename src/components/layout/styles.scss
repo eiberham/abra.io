@@ -1,12 +1,12 @@
 .container {
     background: inherit;
     width: 100%;
-    max-width: 750px;
+    max-width: 1120px;
     padding: 10px 8px;
     margin: auto;
     display: grid;
     grid-template-rows: 25vh min-content 20vh;
-    grid-template-columns: 6fr 3fr;
+    grid-template-columns: 1fr;
     grid-gap: 10px;
     grid-template-areas: "head head"
                         "main main"

@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import { css, Global } from "@emotion/core"
+import { css, Global } from "@emotion/react"
 
 const Layout = ({children}) => {
     return (
@@ -33,7 +33,7 @@ const Layout = ({children}) => {
                     width: 100%;
                     text-align: justify;
                 }
-            `} 
+            `}
             />
             <main className="container">
                 {children}
