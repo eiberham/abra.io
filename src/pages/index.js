@@ -28,10 +28,17 @@ export default () => {
     return (
         < Layout >
             <Seo title="Home" />
-            <div>Hello world</div>
-            {posts && posts.map(post => (
-                <Link to={post.node.frontmatter.slug}>{post.node.frontmatter.title}</Link>
-            ))}
+            <div>
+                <h1>Abraham's Blog</h1>
+                <h3>A space for sharing thoughts and findings</h3>
+            </div>
+            <div>
+                <ul>
+                    {posts && posts.map(post => (
+                        <li><Link to={post.node.frontmatter.slug}>{post.node.frontmatter.title}</Link></li>
+                    ))}
+                </ul>
+            </div>
         </Layout >
     )
 };
