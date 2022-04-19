@@ -53,6 +53,7 @@ module.exports = {
       options: {
         name: 'pages',
         path: `${__dirname}/content`,
+        ignore: [`**/\.*`],
       },
     },
     {
