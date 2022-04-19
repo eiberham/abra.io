@@ -9,12 +9,11 @@ module.exports = {
   siteMetadata: {
     title: `Abraham - Blog`,
     author: `Abraham`,
-    
+    description: 'Part of my journey as a developer captured in words'
   },
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-dark-mode`,
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
@@ -59,7 +58,15 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [],
+        plugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: "carbon",
+              theme: "dracula",
+            },
+          },
+        ],
       },
     },
   ],

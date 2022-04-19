@@ -1,32 +1,38 @@
-import React from 'react';
-
-import { Helmet } from 'react-helmet';
+import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 
 import Layout from "../components/layout";
+import Seo from "../components/seo"
 
-export default function Template({ data }) {
-    const { markdownRemark: post } = data;
-    
-    return (
-        <Layout>
-            <Helmet title={`Abraham - ${post.frontmatter.title}`} />
-            <div>
-                <h1>{post.frontmatter.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: post.html}} />
-            </div>
-        </Layout>
-    )
+export default function Template(props) {
+  const { data } = props
+  const { markdownRemark: post } = data;
+
+  useEffect(() => deckDeckGoHighlightElement(window))
+
+  return (
+    <Layout>
+        <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
+        <div>
+          <h1>{post.frontmatter.title}</h1>
+          <h2>~ {post.frontmatter.duration}</h2>
+          <div dangerouslySetInnerHTML={{ __html: post.html}} />
+        </div>
+      </Layout>
+  )
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostByPath($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        path
+        slug
         title
+        description
+        duration
       }
     }
   }
