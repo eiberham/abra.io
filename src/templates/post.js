@@ -15,8 +15,9 @@ export default function Template(props) {
     <Layout>
         <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
         <div>
-            <h1>{post.frontmatter.title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: post.html}} />
+          <h1>{post.frontmatter.title}</h1>
+          <h2>{post.frontmatter.duration}</h2>
+          <div dangerouslySetInnerHTML={{ __html: post.html}} />
         </div>
       </Layout>
   )
@@ -31,6 +32,7 @@ export const pageQuery = graphql`
         slug
         title
         description
+        duration
       }
     }
   }
