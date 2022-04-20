@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { graphql } from 'gatsby';
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+import { FaRegClock } from 'react-icons/fa';
 
 import Layout from "../components/layout";
 import Seo from "../components/seo"
@@ -16,7 +17,8 @@ export default function Template(props) {
         <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
         <div>
           <h1>{post.frontmatter.title}</h1>
-          <h2>~ {post.frontmatter.duration}</h2>
+          <h2><FaRegClock /> {post.frontmatter.duration}</h2>
+          <h3>{post.frontmatter.tags}</h3>
           <div dangerouslySetInnerHTML={{ __html: post.html}} />
         </div>
       </Layout>
@@ -33,6 +35,7 @@ export const pageQuery = graphql`
         title
         description
         duration
+        tags
       }
     }
   }
