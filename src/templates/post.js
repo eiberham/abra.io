@@ -5,6 +5,9 @@ import { FaRegClock } from 'react-icons/fa';
 
 import Layout from "../components/layout";
 import Seo from "../components/seo"
+import Tags from "../components/tags"
+
+import './styles.scss';
 
 export default function Template(props) {
   const { data } = props
@@ -14,14 +17,16 @@ export default function Template(props) {
 
   return (
     <Layout>
-        <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
-        <div>
-          <h1>{post.frontmatter.title}</h1>
-          <h2><FaRegClock /> {post.frontmatter.duration}</h2>
-          <h3>{post.frontmatter.tags}</h3>
-          <div dangerouslySetInnerHTML={{ __html: post.html}} />
-        </div>
-      </Layout>
+      <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
+      <div className="head">
+        <h1>{post.frontmatter.title}</h1>
+        <h2><FaRegClock /> {post.frontmatter.duration}</h2>
+        <Tags tags={post.frontmatter.tags} />
+      </div>
+      <div className="body">
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </div>
+    </Layout>
   )
 }
 
