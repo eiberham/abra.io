@@ -1,0 +1,19 @@
+.tags {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.tag {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  color: var(--bright-font-color);
+  display: inline-block;
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: normal;
+  padding: 0.4rem 0.6rem;
+  vertical-align: middle;
+}
