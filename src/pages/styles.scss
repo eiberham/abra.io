@@ -41,7 +41,18 @@
   grid-template-areas: "title date"
                        "desc desc";
   grid-gap: 2px;
+  padding: 1rem 8px;
   width: 100%;
+
+  &:hover {
+    background: #f7f7f7;
+    border: 1px solid transparent;
+    border-radius: 8px;
+  }
+
+  a {
+    color: #343434;
+  }
 
   &__description {
     display: block;
