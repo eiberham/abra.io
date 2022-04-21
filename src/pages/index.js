@@ -1,8 +1,12 @@
 import React from "react"
+import { Link, useStaticQuery, graphql } from 'gatsby'
+
 import Layout from "../components/layout"
 import Seo from '../components/seo'
 
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import "./styles.scss"
+
+
 
 export default () => {
     const { allMarkdownRemark: { edges: posts }} = useStaticQuery(
@@ -28,14 +32,18 @@ export default () => {
     return (
         < Layout >
             <Seo title="Home" />
-            <div>
+            <div className="header">
                 <h1>Abraham's Blog</h1>
                 <h3>A space for sharing thoughts and findings</h3>
             </div>
-            <div>
-                <ul>
+            <div className="body">
+                <h4>Latest Posts</h4>
+                <ul className="posts">
                     {posts && posts.map(post => (
-                        <li><Link to={post.node.frontmatter.slug}>{post.node.frontmatter.title}</Link></li>
+                        <li>
+                            <Link to={post.node.frontmatter.slug}>{post.node.frontmatter.title}</Link>
+                            <span>{post.node.frontmatter.description}</span>
+                        </li>
                     ))}
                 </ul>
             </div>
