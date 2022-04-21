@@ -1,0 +1,17 @@
+.header {
+  grid-area: head;
+}
+
+.body {
+  grid-area: main;
+}
+
+.posts {
+  list-style: none;
+  padding: 0;
+
+  span {
+    display: block;
+    font-size: 0.9em;
+  }
+}

@@ -13,7 +13,10 @@ export default function Template(props) {
   const { data } = props
   const { markdownRemark: post } = data;
 
-  useEffect(() => deckDeckGoHighlightElement(window))
+  useEffect(() => {
+    deckDeckGoHighlightElement(window)
+    return () => {}
+  })
 
   return (
     <Layout>
