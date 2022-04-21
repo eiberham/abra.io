@@ -10,8 +10,29 @@
   list-style: none;
   padding: 0;
 
-  span {
+  a {
+    grid-area: title;
+    grid-column: 1 / 2;
+  }
+}
+
+.post {
+  display: grid;
+  grid-template-rows: 2fr;
+  grid-template-columns: 2fr;
+  grid-template-areas: "title date"
+                       "desc desc";
+  grid-gap: 2px;
+  width: 100%;
+
+  &__description {
     display: block;
     font-size: 0.9em;
+    grid-area: desc;
+    grid-column: 1 / -1;
+  }
+
+  &__date {
+    grid-area: date;
   }
 }
