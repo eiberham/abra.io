@@ -22,6 +22,7 @@ export default () => {
                             slug
                             title
                             description
+                            date(formatString: "LL")
                         }
                     }
                 }
@@ -40,9 +41,10 @@ export default () => {
                 <h4>Latest Posts</h4>
                 <ul className="posts">
                     {posts && posts.map(post => (
-                        <li>
+                        <li className="post">
                             <Link to={post.node.frontmatter.slug}>{post.node.frontmatter.title}</Link>
-                            <span>{post.node.frontmatter.description}</span>
+                            <span className="post__description">{post.node.frontmatter.description}</span>
+                            <span className="post__date">{post.node.frontmatter.date}</span>
                         </li>
                     ))}
                 </ul>

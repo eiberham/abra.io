@@ -33,6 +33,9 @@ const Layout = ({children}) => {
                     width: 100%;
                     text-align: justify;
                 }
+                #___gatsby {
+                    width: 100%;
+                }
             `}
             />
             <main className="container">
