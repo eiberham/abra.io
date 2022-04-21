@@ -1,17 +1,34 @@
 .footer {
-    background: inherit;
+    align-content: center;
     align-self: flex-end;
+    background: #f0f0f0;
+    border-top: 1px solid #eee;
     display: flex;
     grid-area: foot;
     grid-column: 1 / -1;
+    justify-content: center;
     min-height: 15vh;
+
+    section {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    span {
+        font-size: .9rem;
+        line-height: 1.2;
+        padding: 1rem 0.5rem;
+    }
+
     &__follow {
-        width: 100%;
+        align-items: center;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
         font-size: 2.5rem;
+        justify-content: center;
+        width: 100%;
         a {
             color: inherit;
         }

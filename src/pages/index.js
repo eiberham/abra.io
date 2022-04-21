@@ -35,10 +35,10 @@ export default () => {
             <Seo title="Home" />
             <div className="header">
                 <h1>Abraham's Blog</h1>
-                <h3>A space for sharing thoughts and findings</h3>
+                <h2>A space for sharing thoughts and findings</h2>
             </div>
             <div className="body">
-                <h4>Latest Posts</h4>
+                <h4 className="body__title">Latest Posts</h4>
                 <ul className="posts">
                     {posts && posts.map(post => (
                         <li className="post">

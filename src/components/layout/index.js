@@ -1,6 +1,9 @@
 import React from 'react';
-import './styles.scss';
 import { css, Global } from "@emotion/react"
+
+import Footer from "../footer"
+import './styles.scss';
+
 
 const Layout = ({children}) => {
     return (
@@ -41,6 +44,7 @@ const Layout = ({children}) => {
             <main className="container">
                 {children}
             </main>
+            <Footer />
         </React.Fragment>
     )
 };
