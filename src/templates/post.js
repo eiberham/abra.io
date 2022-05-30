@@ -6,6 +6,7 @@ import { FaRegClock } from 'react-icons/fa';
 import Layout from "../components/layout";
 import Seo from "../components/seo"
 import Tags from "../components/tags"
+import Comments from "../components/comments"
 
 import './styles.scss';
 
@@ -19,17 +20,20 @@ export default function Template(props) {
   })
 
   return (
-    <Layout>
-      <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
-      <div className="head">
-        <h1>{post.frontmatter.title}</h1>
-        <h2><FaRegClock /> {post.frontmatter.duration}</h2>
-        <Tags tags={post.frontmatter.tags} />
-      </div>
-      <div className="body">
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
-    </Layout>
+    <React.Fragment>
+      <Layout>
+        <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
+        <div className="head">
+          <h1>{post.frontmatter.title}</h1>
+          <h2><FaRegClock /> {post.frontmatter.duration}</h2>
+          <Tags tags={post.frontmatter.tags} />
+        </div>
+        <div className="body">
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </div>
+        <Comments />
+      </Layout>
+    </React.Fragment>
   )
 }
 
