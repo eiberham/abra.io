@@ -5,12 +5,13 @@
     padding: 10px 8px;
     margin: auto;
     display: grid;
-    grid-template-rows: 25vh min-content 20vh;
+    grid-template-rows: 25vh max-content 1fr 20vh;
     grid-template-columns: 1fr;
     grid-gap: 10px;
     grid-template-areas: "head head"
-                        "main main"
-                        "foot foot";
+                         "main main"
+                         "comments comments"
+                         "foot foot";
     grid-auto-rows: max-content;
     font-size: 1.2rem;
     color: inherit;
