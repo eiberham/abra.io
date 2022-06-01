@@ -8,11 +8,14 @@ import Seo from "../components/seo"
 import Tags from "../components/tags"
 import Comments from "../components/comments"
 
+import { getEstimatedReadingTime } from '../utils'
+
 import './styles.scss';
 
 export default function Template(props) {
   const { data } = props
   const { markdownRemark: post } = data;
+  const minutes = getEstimatedReadingTime(post.html)
 
   useEffect(() => {
     deckDeckGoHighlightElement(window)
@@ -25,7 +28,7 @@ export default function Template(props) {
         <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
         <div className="head">
           <h1>{post.frontmatter.title}</h1>
-          <h2><FaRegClock /> {post.frontmatter.duration}</h2>
+          <h2><FaRegClock /> {minutes} minutes</h2>
           <Tags tags={post.frontmatter.tags} />
         </div>
         <div className="body">
