@@ -14,6 +14,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
     {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
@@ -67,6 +68,15 @@ module.exports = {
               theme: "dracula",
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1500,
+              withWebp: true,
+              showCaptions: true,
+              quality: 100,
+            },
+          }
         ],
       },
     },
