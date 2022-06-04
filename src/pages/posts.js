@@ -14,7 +14,6 @@ export default () => {
         {
             allMarkdownRemark(
                 sort: { order: DESC, fields: [frontmatter___date] }
-                limit: 5
             ) {
                 edges {
                     node {
@@ -22,7 +21,7 @@ export default () => {
                             slug
                             title
                             description
-                            date(formatString: "LL")
+                            date(formatString: "MMMM DD, YYYY")
                         }
                     }
                 }
@@ -34,14 +33,10 @@ export default () => {
         < Layout >
             <Seo title="Home" />
             <div className="header">
-                <h1>Abraham's Blog</h1>
-                <h2>A space for sharing thoughts and findings</h2>
+                <h1>Posts</h1>
+                <h2>Articles, snippets, tutorials and more</h2>
             </div>
             <div className="body">
-                <h4 className="body__title">
-                    <span>Latest Posts</span>
-                    <a href="/posts">View All</a>
-                </h4>
                 <ul className="posts">
                     {posts && posts.map(post => (
                         <li className="post">

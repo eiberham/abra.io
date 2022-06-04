@@ -19,11 +19,7 @@ const Layout = ({children}) => {
                     min-height: 100vh;
                     font-family: 'Roboto', sans-serif;
                     color: #555;
-                }
-                body.dark {
-                    -webkit-font-smoothing: antialiased;
-                    background: #282c35 !important;
-                    color: #e4d0a0 !important;
+                    padding: 0
                 }
                 * {
                     box-sizing: border-box;
@@ -41,10 +37,12 @@ const Layout = ({children}) => {
                 }
             `}
             />
-            <main className="container">
-                {children}
-            </main>
-            <Footer />
+            <div class="wrapper">
+                <main className="container">
+                    {children}
+                </main>
+                <Footer />
+            </div>
         </React.Fragment>
     )
 };

@@ -17,10 +17,17 @@
   grid-area: main;
 
   &__title {
+    align-items: center;
+    border-bottom: 3px solid #eee;
+    display: flex;
     font-size: 2.6rem;
     font-weight: 600;
-    border-bottom: 3px solid #eee;
+    justify-content: space-between;
     padding-bottom: 0.25rem;
+
+    a {
+      font-size: 1rem;
+    }
   }
 }
 
