@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import Layout from "../components/layout"
@@ -6,9 +6,23 @@ import Seo from '../components/seo'
 
 import "./styles.scss"
 
-
+/**
+ * Gets all posts by year
+ * @param {array} posts - The array of posts
+ * @returns {object} - Posts by year
+ */
+function getPostsByYear(posts) {
+  if (!Array.isArray(posts)) return null
+  return posts.reduce((acc, value) => ({
+    [new Date(value.node.frontmatter.date).getFullYear()]: [
+      ...acc[value.node.frontmatter.date] || [],
+      ...[value.node.frontmatter]
+    ]
+  }), {})
+}
 
 export default () => {
+    const [ articles, setArticles ] = useState({})
     const { allMarkdownRemark: { edges: posts }} = useStaticQuery(
         graphql`
         {
@@ -29,6 +43,11 @@ export default () => {
         }
     `)
 
+    useEffect(() => {
+      const entries = getPostsByYear(posts)
+      setArticles(entries)
+    }, [posts])
+
     return (
         < Layout >
             <Seo title="Home" />
@@ -36,16 +55,31 @@ export default () => {
                 <h1>Posts</h1>
                 <h2>Articles, snippets, tutorials and more</h2>
             </div>
-            <div className="body">
+        <div className="body">
+          {articles && Object.entries(articles).map(([key, posts]) => (
+              <React.Fragment>
+                <h4 className="body__title">
+                <span>{key}</span>
+                </h4>
                 <ul className="posts">
-                    {posts && posts.map(post => (
-                        <li className="post">
-                            <Link to={post.node.frontmatter.slug}>{post.node.frontmatter.title}</Link>
-                            <span className="post__description">{post.node.frontmatter.description}</span>
-                            <span className="post__date">{post.node.frontmatter.date}</span>
-                        </li>
-                    ))}
+                {posts && posts.map(post => {
+                    const day = new Date(post.date).toLocaleString('en-US', { day: 'numeric' })
+                    const month = new Date(post.date).toLocaleString('en-US', { month: 'long' })
+                    return (
+                      <li className="post">
+                        <Link to={post.slug}>{post.title}</Link>
+                        <span className="post__description">
+                          {post.description}
+                        </span>
+                        <span className="post__date">
+                          {`${month}, ${day}`}
+                        </span>
+                      </li>
+                    )
+                  })}
                 </ul>
+              </React.Fragment>
+            ))}
             </div>
         </Layout >
     )
