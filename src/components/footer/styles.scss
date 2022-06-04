@@ -3,11 +3,11 @@
     align-self: flex-end;
     background: #f0f0f0;
     border-top: 1px solid #eee;
-    display: flex;
+    display: grid;
     grid-area: foot;
     grid-column: 1 / -1;
-    justify-content: center;
-    min-height: 15vh;
+    justify-items: center;
+    height: 15vh;
 
     section {
         align-items: center;
