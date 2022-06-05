@@ -67,13 +67,13 @@ export default () => {
                     const month = new Date(post.date).toLocaleString('en-US', { month: 'long' })
                     return (
                       <li className="post">
-                        <Link to={post.slug}>{post.title}</Link>
-                        <span className="post__description">
-                          {post.description}
-                        </span>
-                        <span className="post__date">
-                          {`${month}, ${day}`}
-                        </span>
+                        <Link to={post.slug} className="post__link">
+                            <div className="post__main">
+                                <span className="post__title">{post.title}</span>
+                                <span className="post__date">{`${month}, ${day}`}</span>
+                            </div>
+                            <span className="post__description">{post.description}</span>
+                        </Link>
                       </li>
                     )
                   })}
