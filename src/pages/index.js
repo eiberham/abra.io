@@ -45,9 +45,13 @@ export default () => {
                 <ul className="posts">
                     {posts && posts.map(post => (
                         <li className="post">
-                            <Link to={post.node.frontmatter.slug}>{post.node.frontmatter.title}</Link>
-                            <span className="post__description">{post.node.frontmatter.description}</span>
-                            <span className="post__date">{post.node.frontmatter.date}</span>
+                            <Link to={post.node.frontmatter.slug} className="post__link">
+                                <div className="post__main">
+                                    <span className="post__title">{post.node.frontmatter.title}</span>
+                                    <span className="post__date">{post.node.frontmatter.date}</span>
+                                </div>
+                                <span className="post__description">{post.node.frontmatter.description}</span>
+                            </Link>
                         </li>
                     ))}
                 </ul>

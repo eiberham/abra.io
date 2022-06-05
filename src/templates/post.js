@@ -28,7 +28,7 @@ export default function Template(props) {
         <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
         <div className="head">
           <h1>{post.frontmatter.title}</h1>
-          <h2><FaRegClock /> {minutes} minutes</h2>
+          <h2 className="time"><FaRegClock />&nbsp;{minutes} minutes</h2>
           <Tags tags={post.frontmatter.tags} />
         </div>
         <div className="body">

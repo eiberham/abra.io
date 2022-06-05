@@ -42,13 +42,10 @@
 }
 
 .post {
-  display: grid;
-  grid-template-rows: 2fr;
-  grid-template-columns: 2fr;
-  grid-template-areas: "title date"
-                       "desc desc";
-  grid-gap: 2px;
-  padding: 1rem 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
   width: 100%;
 
   &:hover {
@@ -61,6 +58,20 @@
     color: #343434;
   }
 
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: center;
+    flex: 1;
+  }
+
+  &__main {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__description {
     display: block;
     font-size: 0.9em;
@@ -69,6 +80,10 @@
   }
 
   &__date {
-    grid-area: date;
+    color: #777;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
   }
+
 }
