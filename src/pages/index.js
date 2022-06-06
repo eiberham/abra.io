@@ -7,14 +7,15 @@ import Newsletter from '../components/newsletter'
 
 import "./styles.scss"
 
-
-
 export default () => {
     const { allMarkdownRemark: { edges: posts }} = useStaticQuery(
         graphql`
         {
             allMarkdownRemark(
                 sort: { order: DESC, fields: [frontmatter___date] }
+                filter: {
+                    frontmatter: { status: { eq: "published" } }
+                }
                 limit: 5
             ) {
                 edges {
@@ -24,6 +25,7 @@ export default () => {
                             title
                             description
                             date(formatString: "LL")
+                            status
                         }
                     }
                 }

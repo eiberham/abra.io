@@ -51,6 +51,7 @@ export const pageQuery = graphql`
         description
         duration
         tags
+        status
       }
     }
   }
