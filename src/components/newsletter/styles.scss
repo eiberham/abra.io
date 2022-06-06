@@ -1,0 +1,19 @@
+.newsletter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  width: 100%;
+
+  & > .container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+
+  }
+}

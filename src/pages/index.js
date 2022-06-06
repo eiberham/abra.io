@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import Seo from '../components/seo'
+import Newsletter from '../components/newsletter'
 
 import "./styles.scss"
 
@@ -33,10 +34,10 @@ export default () => {
     return (
         < Layout >
             <Seo title="Home" />
-            <div className="header">
+            {/* <div className="header">
                 <h1>Abraham's Blog</h1>
                 <h2>A space for sharing thoughts and findings</h2>
-            </div>
+            </div> */}
             <div className="body">
                 <h4 className="body__title">
                     <span>Latest Posts</span>
@@ -55,6 +56,7 @@ export default () => {
                         </li>
                     ))}
                 </ul>
+                {/* <Newsletter /> */}
             </div>
         </Layout >
     )

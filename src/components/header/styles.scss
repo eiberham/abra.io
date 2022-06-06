@@ -3,31 +3,34 @@
     grid-column: 1 / -1;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    
-    .react-toggle-track-check { 
-        top: -10px; 
-        left: 5px;
-    }
-    .react-toggle-track-x {
-        top: -10px;
-        right: 15px;
-    }
-    .dark-mode.react-toggle--checked .react-toggle-track,
-    .dark-mode.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track,
-    .dark-mode.react-toggle--checked .react-toggle-track:hover {
-        background-color: black
-    }
-    
-    .right {
+
+    padding: 1rem 0;
+    border-bottom: 1px solid #e4e4e4;
+    top: 0;
+    position: fixed;
+    background: #fff;
+    width: 100%;
+    z-index: 102;
+    transition: top .2s ease-in-out;
+
+    & > .container {
+        align-items: center;
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        padding: 0 1rem;
-        & > a {
-            font-family: 'Odibee Sans', cursive;
-            color: #444;
+        justify-content: space-between;
+        max-width: 1120px;
+        padding: 10px 8px;
+        width: 100%;
+
+        .logo {
+            color: rgb(49, 46, 129, 0.75);
+            font-size: 1.5rem;
+            font-weight: bold;
+
+            &:hover {
+                color: rgb(165, 180, 252);
+            }
         }
     }
 }

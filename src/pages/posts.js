@@ -51,10 +51,10 @@ export default () => {
     return (
         < Layout >
             <Seo title="Home" />
-            <div className="header">
+            {/* <div className="header">
                 <h1>Posts</h1>
                 <h2>Articles, snippets, tutorials and more</h2>
-            </div>
+            </div> */}
         <div className="body">
           {articles && Object.entries(articles).map(([key, posts]) => (
               <React.Fragment>

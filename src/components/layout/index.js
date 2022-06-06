@@ -1,6 +1,7 @@
 import React from 'react';
 import { css, Global } from "@emotion/react"
 
+import Header from '../header'
 import Footer from "../footer"
 import './styles.scss';
 
@@ -38,6 +39,7 @@ const Layout = ({children}) => {
             `}
             />
             <div className="wrapper">
+                <Header />
                 <main className="container">
                     {children}
                 </main>
