@@ -14,6 +14,7 @@ import "./styles.scss"
 function getPostsByYear(posts) {
   if (!Array.isArray(posts)) return null
   return posts.reduce((acc, value) => ({
+    ...acc,
     [new Date(value.node.frontmatter.date).getFullYear()]: [
       ...acc[value.node.frontmatter.date] || [],
       ...[value.node.frontmatter]
@@ -28,6 +29,9 @@ export default () => {
         {
             allMarkdownRemark(
                 sort: { order: DESC, fields: [frontmatter___date] }
+                filter: {
+                    frontmatter: { status: { eq: "published" } }
+                }
             ) {
                 edges {
                     node {
@@ -36,6 +40,7 @@ export default () => {
                             title
                             description
                             date(formatString: "MMMM DD, YYYY")
+                            status
                         }
                     }
                 }
@@ -43,10 +48,12 @@ export default () => {
         }
     `)
 
-    useEffect(() => {
+  useEffect(() => {
       const entries = getPostsByYear(posts)
       setArticles(entries)
     }, [posts])
+
+  console.log('articles: ', articles)
 
     return (
         < Layout >
