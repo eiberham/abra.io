@@ -47,7 +47,7 @@ export default () => {
                 </h4>
                 <ul className="posts">
                     {posts && posts.map(post => (
-                        <li className="post">
+                        <li className="post" key={post.node.frontmatter.slug}>
                             <Link to={post.node.frontmatter.slug} className="post__link">
                                 <div className="post__main">
                                     <span className="post__title">{post.node.frontmatter.title}</span>
@@ -58,7 +58,7 @@ export default () => {
                         </li>
                     ))}
                 </ul>
-                {/* <Newsletter /> */}
+                <Newsletter />
             </div>
         </Layout >
     )

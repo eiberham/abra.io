@@ -15,7 +15,7 @@
         margin: auto;
         display: grid;
         grid-area: container;
-        grid-template-rows: 25vh max-content 1fr 20vh;
+        grid-template-rows: max-content max-content 1fr 20vh;
         grid-template-columns: 1fr;
         grid-gap: 2px;
         grid-template-areas: "head head"

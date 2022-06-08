@@ -64,7 +64,7 @@ export default () => {
             </div> */}
         <div className="body">
           {articles && Object.entries(articles).map(([key, posts]) => (
-              <React.Fragment>
+              <div key={key}>
                 <h4 className="body__title">
                 <span>{key}</span>
                 </h4>
@@ -73,7 +73,7 @@ export default () => {
                     const day = new Date(post.date).toLocaleString('en-US', { day: 'numeric' })
                     const month = new Date(post.date).toLocaleString('en-US', { month: 'long' })
                     return (
-                      <li className="post">
+                      <li className="post" key={post.slug}>
                         <Link to={post.slug} className="post__link">
                             <div className="post__main">
                                 <span className="post__title">{post.title}</span>
@@ -85,7 +85,7 @@ export default () => {
                     )
                   })}
                 </ul>
-              </React.Fragment>
+              </div>
             ))}
             </div>
         </Layout >
