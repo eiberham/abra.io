@@ -13,9 +13,6 @@ jobs:
       env:
         msg: ${{ github.event.head_commit.message }}
         body: ${{fromJSON(needs.job1.outputs.matrix)}}
-      run: |
-          echo title = $msg
-          echo ${{ fromJSON(steps.notify.outputs.response).message }}
       uses: fjogeleit/http-request-action@v1
       with:
        url: ${{ secrets.NOTIFY_ENDPOINT }}
