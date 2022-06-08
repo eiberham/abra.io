@@ -1,0 +1,23 @@
+name: blog continuous integration workflow
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deployment:
+   runs-on: ubuntu-latest
+   steps:
+    - name: notify new article
+      id: notify
+      if: contains( github.event.head_commit.message, '{' )
+      env:
+        msg: ${{ github.event.head_commit.message }}
+        body: ${{fromJSON(needs.job1.outputs.matrix)}}
+      run: |
+          echo title = $msg
+          echo ${{ fromJSON(steps.notify.outputs.response).message }}
+      uses: fjogeleit/http-request-action@v1
+      with:
+       url: ${{ secrets.NOTIFY_ENDPOINT }}
+       method: 'POST'
+       data: ${{ github.event.head_commit.message }}

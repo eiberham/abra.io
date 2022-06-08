@@ -26,7 +26,8 @@ export default function Template(props) {
     <React.Fragment>
       <Layout>
         <Seo title={post.frontmatter.title} description={post.frontmatter.description} />
-        <div className="head">
+        <div className="headings">
+          <span className="date">Published on {post.frontmatter.date}</span>
           <h1>{post.frontmatter.title}</h1>
           <h2 className="time"><FaRegClock />&nbsp;{minutes} minutes</h2>
           <Tags tags={post.frontmatter.tags} />

@@ -6,7 +6,7 @@ export default function ({tags}) {
   return (
     <ul className="tags">
       {categories && categories.map(category => (
-        <li className="tag">{category}</li>
+        <li className="tag" key={category}>{category}</li>
       ))}
     </ul>
   )

@@ -1,12 +1,28 @@
-.head {
+.headings {
   grid-area: head;
 }
 
 .body {
   grid-area: main;
+
+  p, li {
+    line-height: 1.875rem;
+  }
 }
 
 .time {
   align-items: center;
   display: flex;
+}
+
+.date {
+  align-items: center;
+  color: #818890;
+  display: flex;
+  font-family: Matter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  font-size: 1.125rem;
+  justify-content: center;
+  line-height: 1.75rem;
+  margin-top: 0.5rem;
 }
