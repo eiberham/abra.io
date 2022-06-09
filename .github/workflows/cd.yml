@@ -7,9 +7,9 @@ jobs:
   deployment:
    runs-on: ubuntu-latest
    steps:
-    - name: logging
-      run: |
-        echo "${{toJSON(github.event)}}"
+    # - name: logging
+    #  run: |
+    #    echo "${{toJSON(github.event)}}"
     - name: notify new article
       id: notify
       if: contains( github.event.commits[0].message, '{' )
