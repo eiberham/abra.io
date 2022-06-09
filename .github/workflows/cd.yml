@@ -12,11 +12,11 @@ jobs:
         echo "${{toJSON(github.event)}}"
     - name: notify new article
       id: notify
-      if: contains( github.event.head_commit.message, '{' )
+      if: contains( github.event.commits[0].message, '{' )
       env:
         msg: ${{ github.event.head_commit.message }}
       uses: fjogeleit/http-request-action@v1
       with:
        url: ${{ secrets.NOTIFY_ENDPOINT }}
        method: 'POST'
-       data: ${{ github.event.head_commit.message }}
+       data: ${{ github.event.commits[0].message }}
