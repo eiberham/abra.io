@@ -25,8 +25,8 @@ const Newsletter = () => {
       <form className="form" onSubmit={onSubmit}>
         <div className="container">
           <p className="container-text">
-            Do not miss out. <br />
-            If you want to get the latest content via email subscribe to the newsletter
+            If you want to get the latest content via email subscribe to the newsletter. <br />
+            You can opt-out any time.
           </p>
           <div className="fieldset">
             <div>
