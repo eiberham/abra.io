@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-export default ({ title, description, meta = [] }) => {
+export default ({ title, description, meta = [], slug = '' }) => {
   const { site } = useStaticQuery(
     graphql`
       {
@@ -10,8 +10,9 @@ export default ({ title, description, meta = [] }) => {
           siteMetadata {
             author,
             description,
-            title
+            title,
           }
+          host
         }
       }
     `
@@ -30,16 +31,20 @@ export default ({ title, description, meta = [] }) => {
           content: metaDescription
         },
         {
+          name: 'og:url',
+          content: `${site.host}${slug}`
+        },
+        {
+          property: 'og:type',
+          content: 'website'
+        },
+        {
           property: 'og:title',
           content: title
         },
         {
           property: 'og:description',
           content: metaDescription
-        },
-        {
-          property: 'og:type',
-          content: 'website'
         }
       ].concat(meta)}
     />
