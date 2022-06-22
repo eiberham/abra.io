@@ -11,9 +11,9 @@ jobs:
       id: notify
       if: contains( github.event.commits[0].message, '{' )
       env:
-        msg: ${{ github.event.head_commit.message }}
+        msg: ${{ github.event.commits[0].message }}
       uses: fjogeleit/http-request-action@v1
       with:
        url: ${{ secrets.NOTIFY_ENDPOINT }}
        method: 'POST'
-       data: ${{ github.event.commits[0].message }}
+       data: ${{ $msg }}
