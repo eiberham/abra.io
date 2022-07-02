@@ -4,14 +4,14 @@ import './styles.scss'
 
 const Newsletter = () => {
   const [ email, setEmail ] = useState('')
-  const endpoint = process.env.GATSBY_SUBSCRIPTION_ENDPOINT
+  const host = process.env.GATSBY_APIGATEWAY_HOST
   const onEmailChange = (e) => setEmail(e.target.value)
   const isValid = email => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
   const onSubmit = async (e) => {
     e.preventDefault()
     try {
       const data = { email }
-      await fetch(endpoint, {
+      await fetch(`${host}/newsletter`, {
         method: 'post',
         body: JSON.stringify(data)
       })
