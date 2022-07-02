@@ -12,7 +12,6 @@ export default ({ title, description, meta = [], slug = '' }) => {
             description,
             title,
           }
-          host
         }
       }
     `
@@ -32,7 +31,7 @@ export default ({ title, description, meta = [], slug = '' }) => {
         },
         {
           name: 'og:url',
-          content: `${site.host}${slug}`
+          content: `https://eiberham.com/${slug}`
         },
         {
           property: 'og:type',
