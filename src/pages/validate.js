@@ -14,7 +14,7 @@ export default () => {
         method: 'post',
         body: JSON.stringify({ hash })
       })
-      if (response.status === 200) {
+      if (response.statusCode === 200) {
         setValidated(true)
       }
     })()
