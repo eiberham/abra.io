@@ -4,7 +4,9 @@ import { IoIosMail, IoMdSad } from "react-icons/io";
 import Layout from "../components/layout"
 
 export default () => {
-  const [ validated, setValidated ] = useState(false)
+  const [validated, setValidated] = useState(false)
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     (async () => {
       const host = process.env.GATSBY_APIGATEWAY_HOST
@@ -17,8 +19,11 @@ export default () => {
       if (response.statusCode === 200) {
         setValidated(true)
       }
+      setLoading(false)
     })()
   }, [])
+
+  if ( loading ) return null
 
   return (
     <Layout>
