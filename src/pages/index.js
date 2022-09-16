@@ -24,7 +24,7 @@ export default () => {
                             slug
                             title
                             description
-                            date(formatString: "LL")
+                            date (formatString: "MMM, YYYY")
                             status
                         }
                     }
@@ -51,7 +51,7 @@ export default () => {
                             <Link to={post.node.frontmatter.slug} className="post__link">
                                 <div className="post__main">
                                     <span className="post__title">{post.node.frontmatter.title}</span>
-                                    <span className="post__date">{post.node.frontmatter.date}</span>
+                                    <span className="post__date">{post.node.frontmatter.date.toUpperCase()}</span>
                                 </div>
                                 <span className="post__description">{post.node.frontmatter.description}</span>
                             </Link>
