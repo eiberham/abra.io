@@ -16,6 +16,7 @@ function getPostsByYear(posts) {
   return posts.reduce((acc, value) => ({
     ...acc,
     [new Date(value.node.frontmatter.date).getFullYear()]: [
+      ...acc[new Date(value.node.frontmatter.date).getFullYear()] || [],
       ...acc[value.node.frontmatter.date] || [],
       ...[value.node.frontmatter]
     ]
@@ -39,7 +40,7 @@ export default () => {
                             slug
                             title
                             description
-                            date(formatString: "MMMM DD, YYYY")
+                            date(formatString: "MMM DD, YYYY")
                             status
                         }
                     }
@@ -76,8 +77,8 @@ export default () => {
                       <li className="post" key={post.slug}>
                         <Link to={post.slug} className="post__link">
                             <div className="post__main">
-                                <span className="post__title">{post.title}</span>
-                                <span className="post__date">{`${month}, ${day}`}</span>
+                              <span className="post__title">{post.title}</span>
+                              <span className="post__date">{post.date.toUpperCase()}</span>
                             </div>
                             <span className="post__description">{post.description}</span>
                         </Link>
