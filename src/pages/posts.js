@@ -35,7 +35,7 @@ function getPostsByTag(posts) {
 
 export default () => {
   const [articles, setArticles] = useState({})
-  const tag = new URLSearchParams(window.location.search).get('tag')
+  const tag = (typeof window !== `undefined`) ? new URLSearchParams(window.location.search).get('tag') : null
   const { allMarkdownRemark: { edges: posts }} = useStaticQuery(
       graphql`
       {
