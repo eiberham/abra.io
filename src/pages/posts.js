@@ -23,71 +23,80 @@ function getPostsByYear(posts) {
   }), {})
 }
 
+/**
+ * Gets all posts by tag
+ * @param {*} posts - The array of posts
+ * @returns {array} - The array of posts filtered by tag
+ */
+function getPostsByTag(posts) {
+  if (!Array.isArray(posts)) return null
+  return (tag) => posts.filter( post => post.node.frontmatter.tags.includes(tag))
+}
+
 export default () => {
-    const [ articles, setArticles ] = useState({})
-    const { allMarkdownRemark: { edges: posts }} = useStaticQuery(
-        graphql`
-        {
-            allMarkdownRemark(
-                sort: { order: DESC, fields: [frontmatter___date] }
-                filter: {
-                    frontmatter: { status: { eq: "published" } }
-                }
-            ) {
-                edges {
-                    node {
-                        frontmatter {
-                            slug
-                            title
-                            description
-                            date(formatString: "MMM DD, YYYY")
-                            status
-                        }
-                    }
-                }
-            }
-        }
-    `)
+  const [articles, setArticles] = useState({})
+  const tag = new URLSearchParams(window.location.search).get('tag')
+  const { allMarkdownRemark: { edges: posts }} = useStaticQuery(
+      graphql`
+      {
+          allMarkdownRemark(
+              sort: { order: DESC, fields: [frontmatter___date] }
+              filter: {
+                  frontmatter: {
+                    status: { eq: "published" },
+                  }
+              }
+          ) {
+              edges {
+                  node {
+                      frontmatter {
+                          slug
+                          title
+                          description
+                          date(formatString: "MMM DD, YYYY")
+                          tags
+                          status
+                      }
+                  }
+              }
+          }
+      }
+  `)
 
   useEffect(() => {
-      const entries = getPostsByYear(posts)
+      // TODO: use a compose function here
+      const entries = tag ? getPostsByYear(getPostsByTag(posts)(tag)) : getPostsByYear(posts)
       setArticles(entries)
-    }, [posts])
-
-  console.log('articles: ', articles)
+    }, [posts, tag])
 
     return (
         < Layout >
             <Seo title="Home" />
-            {/* <div className="header">
-                <h1>Posts</h1>
-                <h2>Articles, snippets, tutorials and more</h2>
-            </div> */}
-        <div className="body">
-          {articles && Object.entries(articles).map(([key, posts]) => (
-              <div key={key}>
-                <h4 className="body__title">
-                <span>{key}</span>
-                </h4>
-                <ul className="posts">
-                {posts && posts.map(post => {
-                    const day = new Date(post.date).toLocaleString('en-US', { day: 'numeric' })
-                    const month = new Date(post.date).toLocaleString('en-US', { month: 'long' })
-                    return (
-                      <li className="post" key={post.slug}>
-                        <Link to={post.slug} className="post__link">
-                            <div className="post__main">
-                              <span className="post__title">{post.title}</span>
-                              <span className="post__date">{post.date.toUpperCase()}</span>
-                            </div>
-                            <span className="post__description">{post.description}</span>
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
-            ))}
+            <div className="body">
+              {articles && Object.entries(articles).map(([key, posts]) => (
+                  <div key={key}>
+                    <h4 className="body__title">
+                      <span>{key}</span>
+                    </h4>
+                    <ul className="posts">
+                    {posts && posts.map(post => {
+                        const day = new Date(post.date).toLocaleString('en-US', { day: 'numeric' })
+                        const month = new Date(post.date).toLocaleString('en-US', { month: 'long' })
+                        return (
+                          <li className="post" key={post.slug}>
+                            <Link to={post.slug} className="post__link">
+                                <div className="post__main">
+                                  <span className="post__title">{post.title}</span>
+                                  <span className="post__date">{post.date.toUpperCase()}</span>
+                                </div>
+                                <span className="post__description">{post.description}</span>
+                            </Link>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </div>
+                ))}
             </div>
         </Layout >
     )
