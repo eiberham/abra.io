@@ -6,7 +6,9 @@ export default function ({tags}) {
   return (
     <ul className="tags">
       {categories && categories.map(category => (
-        <li className="tag" key={category}>{category}</li>
+        <li className="tag" key={category} >
+          <a href={`/posts?tag=${category}`} >{category}</a>
+        </li>
       ))}
     </ul>
   )
