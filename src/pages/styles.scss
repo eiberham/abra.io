@@ -14,20 +14,27 @@
 }
 
 .body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
   grid-area: main;
+  line-height: 1.5;
 
   &__title {
     align-items: center;
     border-bottom: 3px solid #eee;
     display: flex;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 600;
     justify-content: space-between;
-    padding-bottom: 0.25rem;
 
     a {
-      color: #555;
-      font-size: 1.3rem;
+      background: rgba(49, 46, 129, 0.75);
+      border: 1px solid rgba(49, 46, 129, 0.75);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 1rem;
     }
   }
 }
@@ -82,8 +89,6 @@
 
   &__date {
     color: #777;
-    font-size: 0.875rem;
-    font-weight: 400;
     text-align: center;
   }
 
