@@ -1,4 +1,5 @@
 .header {
+  background-color: #24292e;
   grid-area: head;
 
   h1 {
@@ -6,7 +7,7 @@
   }
 
   h2 {
-    color: #6b76f3;
+    color: #fff; /*6b76f3;*/
     font-size: 1.5rem;
     font-weight: 600;
     margin-block-start: -1.5rem;
@@ -28,7 +29,7 @@
     justify-content: space-between;
 
     a {
-      background: rgba(49, 46, 129, 0.75);
+      background: #444655; /* rgba(49, 46, 129, 0.75); */
       border: 1px solid rgba(49, 46, 129, 0.75);
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
