@@ -1,7 +1,8 @@
 .footer {
     align-content: center;
     align-self: flex-end;
-    background: #f0f0f0;
+    /* background: #f0f0f0; */
+    background: transparent;
     border-top: 1px solid #eee;
     display: grid;
     grid-area: foot;
@@ -12,8 +13,10 @@
     section {
         align-items: center;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1120px;
+        width: 100%;
     }
 
     span {
@@ -25,9 +28,11 @@
     &__follow {
         align-items: center;
         display: flex;
+        flex-basis: 50%;
         flex-direction: row;
         font-size: 2.5rem;
-        justify-content: center;
+        justify-content: flex-end;
+        padding: 0 8px;
         width: 100%;
         a {
             color: inherit;

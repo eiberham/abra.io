@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <section>
-                <span>Made by Abraham</span>
+                <span>2022 - ABRAHAM</span>
                 <div className="footer__follow">
                     <a aria-label="github" href="https://github.com/eiberham"><FaGithubSquare /></a>
                 </div>
