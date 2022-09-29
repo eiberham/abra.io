@@ -3,7 +3,6 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import Seo from '../components/seo'
-import Newsletter from '../components/newsletter'
 
 import "./styles.scss"
 
@@ -58,7 +57,6 @@ export default () => {
                         </li>
                     ))}
                 </ul>
-                <Newsletter />
             </div>
         </Layout >
     )
