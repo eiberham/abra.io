@@ -20,16 +20,15 @@ const Newsletter = () => {
     }
   }
   return (
-    <section className="newsletter">
+    <div className="newsletter">
       <form className="form" onSubmit={onSubmit}>
         <div className="container">
           <p className="container-text">
-            If you want to get the latest content via email subscribe to the newsletter. <br />
-            You can opt-out any time.
+            If you want to get the latest content via email subscribe to the newsletter. You can opt-out any time.
           </p>
           <div className="fieldset">
             <div>
-              <input type="text" name="email" value={email} onChange={onEmailChange} required />
+              <input type="text" name="email" value={email} placeholder="address@domain.com" onChange={onEmailChange} required />
               <button type="submit" title="subscribe" disabled={!isValid(email)}>
                 <span>Subscribe</span>
               </button>
@@ -40,7 +39,7 @@ const Newsletter = () => {
           </div>
         </div>
       </form>
-    </section>
+    </div>
   )
 }
 

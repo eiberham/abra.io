@@ -1,15 +1,12 @@
 .newsletter {
   align-items: center;
-  background: #d3cce3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #e9e4f0, #d3cce3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #e9e4f0, #d3cce3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  border: 1px solid rgba(49, 46, 129, 0.75);
-  border-radius: 8px;
+  background: transparent;
   display: flex;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
   justify-content: center;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  width: 100%;
+  line-height: 1.5;
+  padding: 16px 8px;
 
   form {
 
