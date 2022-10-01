@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import './styles.scss'
 
 const Newsletter = () => {
@@ -14,9 +17,12 @@ const Newsletter = () => {
         method: 'post',
         body: JSON.stringify(data)
       })
+      toast.success("Subscribed !")
       setEmail('')
     } catch (err) {
       console.error(err)
+      toast.error("Could not subscribe")
+      setEmail('')
     }
   }
   return (
@@ -39,6 +45,7 @@ const Newsletter = () => {
           </div>
         </div>
       </form>
+      <ToastContainer />
     </div>
   )
 }
