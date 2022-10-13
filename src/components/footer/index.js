@@ -10,7 +10,7 @@ const Footer = () => {
             <section>
                 <Newsletter />
                 <div className="footer__bottom">
-                    <span>2022 - Designed by Abraham</span>
+                    <span>Content on this Site is Copyright © 2022 Abraham. Licensed under a <a aria-label="creative-commons" href="https://creativecommons.org/licenses/by/3.0">Creative Commons Attribution 3.0 License</a></span>
                     <div className="footer__follow">
                         <a aria-label="github" href="https://github.com/eiberham"><FaGithubSquare /></a>
                     </div>
